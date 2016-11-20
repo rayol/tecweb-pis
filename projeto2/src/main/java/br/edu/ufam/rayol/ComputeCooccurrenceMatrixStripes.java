@@ -1,4 +1,4 @@
-package io.bespin.java.mapreduce.cooccur;
+package br.edu.ufam.rayol;
 
 import java.io.IOException;
 import java.util.ArrayList;
