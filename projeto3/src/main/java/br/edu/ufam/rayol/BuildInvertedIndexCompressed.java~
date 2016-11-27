@@ -1,4 +1,4 @@
-package br.ufam.edu.rayol;
+package br.edu.ufam.rayol;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;

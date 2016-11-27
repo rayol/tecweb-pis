@@ -49,7 +49,7 @@ public class BuildInvertedIndexCompressed extends Configured implements Tool {
                 throws IOException, InterruptedException {
             String text = doc.toString();
 
-            // Tokenize line.
+            // Tokeniza cada linha
             List<String> tokens = new ArrayList<String>();
             StringTokenizer itr = new StringTokenizer(text);
             while (itr.hasMoreTokens()) {
@@ -58,13 +58,13 @@ public class BuildInvertedIndexCompressed extends Configured implements Tool {
                 tokens.add(w);
             }
 
-            // Build a histogram of the terms.
+            // Cria um histograma dos termos
             COUNTS.clear();
             for (String token : tokens) {
                 COUNTS.increment(token);
             }
 
-            // Emit postings.
+            // Emite os postings
             for (PairOfObjectInt<String> e : COUNTS) {
                 WORD.set(e.getLeftElement());
                 context.write(new PairOfStringInt(WORD.toString(), (int) docno.get()) , new IntWritable(e.getRightElement()));
@@ -73,6 +73,7 @@ public class BuildInvertedIndexCompressed extends Configured implements Tool {
         }
     }
 
+	//reducer baseado no apresentado pelo jim li
     private static class MyReducer extends
             Reducer<PairOfStringInt, IntWritable, Text, PairOfWritables<VIntWritable, BytesWritable>> {
 

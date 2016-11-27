@@ -9,6 +9,8 @@
 
 # Questão 3. Que artigos da 2a. coleção satisfazem as seguintes consultas boleanas? apresente somente os títulos.
 
+*Como titulos foram considerados os numeros da linha, o script utilizado foi desenvolvido pelo Vitor*
+
 **outrageous AND fortune**
 
 28185317	
